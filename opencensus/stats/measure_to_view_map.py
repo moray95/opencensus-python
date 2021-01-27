@@ -109,7 +109,6 @@ class MeasureToViewMap(object):
 
     def record(self, tags, measurement_map, timestamp, attachments=None):
         """records stats with a set of tags"""
-        assert all(vv >= 0 for vv in measurement_map.values())
         for measure, value in measurement_map.items():
             if measure != self._registered_measures.get(measure.name):
                 return
